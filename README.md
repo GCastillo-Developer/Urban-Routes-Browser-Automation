@@ -1,8 +1,45 @@
-Code Naming Guidlines
+Web Automation Testing Project
+Overview
 
-- Variable names are written in snake_case and are descriptive of their purpose.
-- Constants are written in uppercase
-- Comments are used to explain important blocks of code.
-- Code is organized in a modular manner, with reusable code blocks imported where necessary.
-- No unnecessary wait functions that make the test run longer than it should.
-- Follow a naming convention for test titles that starts with `test_` and provides a clear description of the test scenario. We provide test titles in the brief.
+This Python project automates the testing of a web page using a structured and modular approach. The project uses a Page Object Model (POM) to organize web elements and interactions, making tests maintainable and scalable.
+
+The automation scripts include setup and teardown procedures, reusable helper functions, and structured test data management.
+
+Project Structure:
+project_root/
+│
+├── main.py           # Main test script with setup, teardown, and feature tests
+├── page_object_model.py  # Defines page objects and web element interactions
+├── helper.py         # Reusable helper functions (e.g., waits, clicks, validations)
+├── data.py           # Test data storage (inputs, expected values, URLs)
+├── requirements.txt  # Python dependencies
+└── README.md         # Project documentation
+
+Components:
+main.py
+• Contains test functions for multiple features of the web page.
+• Includes setUp and tearDown methods for initializing and closing the browser.
+• Calls methods from page_object_model.py and helper.py for interaction with the web page.
+
+page_object_model.py
+• Implements the Page Object Model design pattern
+• Defines locators and functions for interacting with page elements.
+• Promotes modularity and easier maintenance of tests.
+
+helper.py
+• Contains reusable utility functions:
+  • Element waits
+  • Click, input, and validation helpers
+  • Any commonly used interactions across different tests
+
+data.py
+• Stores test data:
+  • URLs
+  • Input values
+  • Expected results
+• Enables separation of data from test logic for easier updates.
+
+requirements.txt:
+
+• Python dependencies: selenium, pytest.
+
