@@ -43,3 +43,13 @@ requirements.txt:
 
 • Python dependencies: selenium, pytest.
 
+Features Tested:
+• Navigation between pages
+• Form submissions
+• Button clicks and element interactions
+• Validations and assertions on web elements
+
+Notes:
+• The project uses Python 3.x and Selenium for browser automation.
+• The Page Object Model ensures easy maintenance when the web page changes.
+• Helper functions reduce duplicate code and simplify test scripts.
