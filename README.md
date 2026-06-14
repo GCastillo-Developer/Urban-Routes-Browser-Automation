@@ -47,8 +47,6 @@ Each test follows a consistent pattern:
 Below is a breakdown of each test.
 
 ### ----Set Route Test -- test_set_route()----
-
-📍 Set Route Test — test_set_route()
 Validates that the user can correctly enter:
 • From address
 • To address
@@ -118,10 +116,37 @@ After all tests complete:
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
-page_object_model.py
-• Implements the Page Object Model design pattern
-• Defines locators and functions for interacting with page elements.
-• Promotes modularity and easier maintenance of tests.
+Page Object Model (pages.py)
+
+This section contains automated UI tests for the Urban Routes web application using Python, Selenium WebDriver, and the Page Object Model (POM) design pattern. The codebase automates and validates full end-to-end user workflows, from configuring routes to completing taxi bookings.
+
+### ----What the Project Does----
+This test automation framework simulates actual user behavior on the Urban Routes web platform to ensure that critical business processes and UI features work exactly as expected. The test suite automatically performs and verifies the following user journey:
+
+1. Address Configuration: Inputs and verifies the pickup (`From`) and destination (`To`) locations.
+2. Taxi Plan Selection: Books a taxi specifically using the Supportive Plan tariff layer.
+3. Phone Authentication Workflow: Inputs a user's phone number, triggers the validation setup, handles modal pop-ups, inputs the SMS verification token, and confirms the account login.
+4. Credit Card Integration: Configures electronic payment profiles by securely filling in credit card numbers and CVV codes, changing focus to activate UI buttons, validating that the "Link" button updates its state correctly, and confirming that the application updates the payment method from cash to card.
+5. Special Requirements Fulfillment:
+   • Leaves custom textual comments or instructions for the taxi driver.
+   • Activates toggles for additional package items (e.g., Blanket and Handkerchiefs).
+   • Increments item counters to order extra amenities (e.g., selecting 2 Ice Creams).
+6. Order Submission: Submits the complete ride reservation and validates that the asynchronous car search progress modal successfully appears on screen.
+
+### ----Setup & Execution Guide----
+Prerequisites
+Make sure your environment includes the following components:
+• Python 3.8+
+• Google Chrome** browser
+• ChromeDriver (Must match your current installed version of Google Chrome)
+
+1. Installation
+Clone the project repository to your local machine and install Selenium:
+
+bash
+git clone https://github.com/GCastillo-Developer/Urban-Routes-Browser-Automation
+cd QA-USA-Python_Automation
+pip install selenium
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -171,22 +196,26 @@ Why it matters:
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-data.py
+File Constants (data.py)
 • Stores test data:
   • URLs
-  • Input values
-  • Expected results
+  • File Constants
 • Enables separation of data from test logic for easier updates.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
 
 requirements.txt:
 
 • Python dependencies: selenium, pytest.
 
 Features Tested:
-• Navigation between pages
-• Form submissions
-• Button clicks and element interactions
-• Validations and assertions on web elements
+• Selecting the Supportive Plan
+• Filling in the Phone Number
+• Adding a Credit Card
+• Writing a Comment for the Driver
+• Ordering a Blanket and Handkerchiefs
+• Ordering 2 Ice Creams (Supportive Taxi)
+• Ordering a Taxi with the Supportive Tariff
 
 Notes:
 • The project uses Python 3.x and Selenium for browser automation.
